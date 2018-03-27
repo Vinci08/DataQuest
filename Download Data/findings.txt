@@ -1,0 +1,15 @@
+                   TOT_ENR_F  TOT_ENR_M                                         
+SCH_STATUS_MAGNET                                                               
+NO                    232487     245629                                         
+YES                    20499      21500                                         
+     TOT_ENR_F  TOT_ENR_M                                                       
+JJ                                                                              
+NO      252915     266702                                                       
+YES         71        427  
+
+Total girl = 252986
+Total boy = 267129
+
+More boy in JJ than girl
+
+Gender population in magnet school is more or less
