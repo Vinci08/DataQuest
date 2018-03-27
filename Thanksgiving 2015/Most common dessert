@@ -1,0 +1,26 @@
+# Figure out the most common dessert people eat
+
+dessert_count = {}
+
+dessert = data.loc[:,'Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Apple cobbler': 'Which of these desserts do you typically have at Thanksgiving dinner? Please select all that apply.   - Peach cobbler']
+
+for name in dessert.columns:
+    last_name = name.split(" ")[-1]
+    if last_name == "cobbler":
+        last_name = "Apple cobbler"
+    if last_name in dessert_count:
+        last_name = "Peach cobbler"
+    if last_name == "cream":
+        last_name = "Ice cream"
+    if last_name == "cake":
+        last_name = "Carrot Cake"
+    dessert_count[last_name] = dessert[name].count()
+    
+max_v = 0    
+
+for k, v in dessert_count.items():
+    if v > max_v:
+        max_v = v
+        max_key = k
+
+print(max_key, dessert_count[max_key])

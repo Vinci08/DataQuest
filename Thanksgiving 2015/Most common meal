@@ -1,0 +1,77 @@
+# Figure out the most common complete meal people eat
+## Find most common dish and dessing
+
+meal_count = {}
+meal_item = []
+
+meal = data.loc[:,['What is typically the main dish at your Thanksgiving dinner?',
+                   "How is the main dish typically cooked?", 
+                   "What kind of stuffing/dressing do you typically have?", 
+                   'What type of cranberry saucedo you typically have?', 
+                   'Do you typically have gravy?']]
+
+for column in meal.columns:
+    k = meal[column].value_counts().index.tolist()
+    meal_item.append(k)
+            
+popular = [item[0] for item in meal_item]
+
+if popular[-1] == "Yes":
+    popular[-1] = "gravy"
+
+### Find most common side dish
+
+side_count = {}
+sides = data.loc[:, 'Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Brussel sprouts':
+                'Which of these side dishes aretypically served at your Thanksgiving dinner? Please select all that apply. - Yams/sweet potato casserole']
+
+for side in sides.columns:
+    last_name_side = side.split(" ")[-1]
+    if last_name_side == "casserole":
+        last_name_side = "Green beans/green bean casserole"
+    if last_name_side == "salad":
+        last_name_side = "Fruit salad"    
+    if last_name_side in side_count:
+        last_name_side = "Yams/sweet potato casserole"
+    if last_name_side in side_count:
+        last_name_side = "Vegetable salad"
+    if last_name_side == "cheese":
+        last_name_side = "Macaroni and cheese"
+    if last_name_side == "potatoes":
+        last_name_side = "Mashed potatoes"
+    if last_name_side == "sprouts":
+        last_name_side = "Brussel sprouts"
+        
+    side_count[last_name_side] = sides[side].count()
+    
+max_side = 0
+
+for key, value in side_count.items():
+    if value > max_side:
+        max_side = value
+        max_side_key = key
+
+### Find most common pie
+
+pie_count = {}
+pies = data.loc[:, 'Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Apple':
+                'Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Sweet Potato']
+
+for pie in pies.columns:
+    last_name_pie = pie.split(" ")[-1]
+    if last_name_pie == "cream":
+        last_name_pie = "Coconut cream"
+    if last_name_pie == "lime":
+        last_name_pie = "Key lime"    
+    pie_count[last_name_pie] = pies[pie].count()
+    
+max_pie = 0
+
+for pk, pv in pie_count.items():
+    if pv > max_pie:
+        max_pie = pv
+        max_pie_key = pk
+        
+print(popular)
+print("Most common meal:", popular[1], popular[0], "with", popular[2], "stuffing,", popular[3], 
+      "saucedo,", popular[4], ",", max_side_key, ",", max_key, "and", max_pie_key )

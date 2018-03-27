@@ -1,0 +1,60 @@
+# Import Data
+import pandas as pd
+data = pd.read_csv("thanksgiving.csv", encoding = "Latin-1")
+
+# Use pd.dataframe.value_counts()
+data["Do you celebrate Thanksgiving?"].value_counts()
+data = data[data["Do you celebrate Thanksgiving?"] == "Yes"]
+data["Do you celebrate Thanksgiving?"].value_counts()
+data["What is typically the main dish at your Thanksgiving dinner?"].value_counts()
+data[data["What is typically the main dish at your Thanksgiving dinner?"] == "Tofurkey"]["Do you typically have gravy?"]
+
+# Specifically, we'll look at how many people eat Apple, Pecan, or Pumpkin pie during Thanksgiving dinner
+apple_isnull = data["Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Apple"].isnull()
+pumpkin_isnull = data["Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Pumpkin"].isnull()
+pecan_isnull = data["Which type of pie is typically served at your Thanksgiving dinner? Please select all that apply. - Pecan"].isnull()
+ate_pies = (apple_isnull & pumpkin_isnull & pecan_isnull)
+ate_pies.value_counts()
+
+# Write a function to convert a single string (age) to an appropriate integer value. 
+def age_str(age):
+    if pd.isnull(age) is True:
+        return None
+    age = age.split(" ")[0]
+    age = age.replace("+", "")
+    age = int(age)
+    return age
+
+data["int_age"] = data["Age"].apply(age_str)
+data["int_age"].describe()
+
+# Function to convert income from string into integer
+def income_str(income):
+    if pd.isnull(income):
+        return None
+    income = income.split(" ")[0]
+    if income == "Prefer":
+        return None
+    income = income.replace("$", "")
+    income = income.replace(",", "")
+    return int(income)
+
+data["int_income"] = data["How much total combined money did all members of your HOUSEHOLD earn last year?"].apply(income_str)
+data["int_income"].describe()
+
+# How far peole with certain income travel for Thanksgiving
+data[data["int_income"] < 150000]["How far will you travel for Thanksgiving?"].value_counts()
+data[data["int_income"] > 150000]["How far will you travel for Thanksgiving?"].value_counts()
+
+# Pivot table
+data.pivot_table(
+    values = "int_age", 
+    index = "Have you ever tried to meet up with hometown friends on Thanksgiving night?", 
+    columns = 'Have you ever attended a "Friendsgiving?"')
+    
+data.pivot_table(
+    values = "int_income",
+    index = "Have you ever tried to meet up with hometown friends on Thanksgiving night?", 
+    columns = 'Have you ever attended a "Friendsgiving?"')
+    
+    
