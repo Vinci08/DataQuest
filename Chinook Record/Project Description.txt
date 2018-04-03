@@ -1,0 +1,9 @@
+Guided Project: Answering Business Questions using SQL
+
+In this guided project we put our SQL joining skills to the test, using subqueries, multiple joins, set operations, aggregate functions and more.
+
+In this guided project, we're going to practice using our SQL skills to answer business questions. In each step, we'll give you a task, and you'll need to:
+
+Write a SQL query to extract the relevant data
+Create plots where necessary to visualize the data
+Write a short paragraph, drawing conclusions and explaining the data and/or visualizations.
