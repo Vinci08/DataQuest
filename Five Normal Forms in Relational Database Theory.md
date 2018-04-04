@@ -642,7 +642,7 @@ seems unavoidable that we record the fact that "Smith sells cars" several times.
 
 <p>The normal forms discussed here deal only with redundancies occurring within a single
 record type. Fifth normal form is considered to be the "ultimate" normal form
-with respect to such redundanciesæ. </p>
+with respect to such redundanciesÃ¦. </p>
 
 <p>Other redundancies can occur across multiple record types. For the example concerning
 employees, departments, and locations, the following records are in third normal form in
