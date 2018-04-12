@@ -1,7 +1,7 @@
 # DataQuest
 All Data Quest Projects
 
-CIA World Fact: Working with Python and SQLite
+CIA World Fact: Working with Python and SQLite/n
 Chinook Record: Answer Business Question with SQL
 Data Visualization: Use Matplotlib to create plot/multiple plots in Python
 Designing and Creating a Database: Schema
