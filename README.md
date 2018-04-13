@@ -1,4 +1,3 @@
-# DataQuest
 # All Data Quest Projects
 
 CIA World Fact: Working with Python and SQLite
