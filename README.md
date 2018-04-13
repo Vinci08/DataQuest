@@ -1,5 +1,5 @@
 # DataQuest
-All Data Quest Projects
+# All Data Quest Projects
 
 CIA World Fact: Working with Python and SQLite
 
@@ -18,3 +18,5 @@ Star Wars Survey: Cleaning Data and Visualize sets of data
 Thanksgiving 2015: Intermediate data analysis with Pandas
 
 Transform data with Python: Intermediate Command Line
+
+Fandango Bias: Perfom statiscal analysis on data
