@@ -23,3 +23,5 @@ Fandango Bias: Perfom statiscal analysis on data
 Winning Jeopardy: work with a dataset of Jeopardy questions to figure out some patterns in the questions - use chi-squared test
 
 Predict Car Prices: Machine Learning basic with Single and Multivariate K-nearest neighbors model
+
+Predict Home Sale Price: Predict sale price with Linear Regression and Cross Validation
