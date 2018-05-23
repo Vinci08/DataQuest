@@ -25,3 +25,5 @@ Winning Jeopardy: work with a dataset of Jeopardy questions to figure out some p
 Predict Car Prices: Machine Learning basic with Single and Multivariate K-nearest neighbors model
 
 Predict Home Sale Price: Predict sale price with Linear Regression and Cross Validation
+
+Storing Storm Data: working with Postgresql, including create/manage table and user group
