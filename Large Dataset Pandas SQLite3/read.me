@@ -1,0 +1,15 @@
+Guided Project: Analyzing Startup Fundraising Deals from Crunchbase
+
+In this course, we explored a few different ways to work with larger datasets in pandas. In this guided project, we'll practice using some of the techniques we learned to analyze startup investments from Crunchbase.com.
+
+Every year, thousands of startup companies raise financing from investors. Each time a startup raises money, we refer to the event as a fundraising round. Crunchbase is a website that crowdsources information on the fundraising rounds of many startups. The Crunchbase user community submits, edits, and maintains most of the information in Crunchbase.
+
+In return, Crunchbase makes the data available through a Web application and a fee-based API. Before Crunchbase switched to the paid API model, multiple groups crawled the site and released the data online. Because the information on the startups and their fundraising rounds is always changing, the data set we'll be using isn't completely up to date.
+
+The data set of investments we'll be exploring is current as of October 2013. You can download it from GitHub. Here's a preview:
+
+company_permalink	company_name	company_category_code	company_country_code	company_state_code	company_region	company_city	investor_permalink	investor_name	investor_category_code	investor_country_code	investor_state_code	investor_region	investor_city	funding_round_type	funded_at	funded_month	funded_quarter	funded_year	raised_amount_usd
+/company/advercar	AdverCar	advertising	USA	CA	SF Bay	San Francisco	/company/1-800-flowers-com	1-800-FLOWERS.COM	NaN	USA	NY	New York	New York	series-a	2012-10-30	2012-10	2012-Q4	2012.0	2000000.0
+/company/launchgram	LaunchGram	news	USA	CA	SF Bay	Mountain View	/company/10xelerator	10Xelerator	finance	USA	OH	Columbus	Columbus	other	2012-01-23	2012-01	2012-Q1	2012.0	20000.0
+/company/utap	uTaP	messaging	USA	NaN	United States - Other	NaN	/company/10xelerator	10Xelerator	finance	USA	OH	Columbus	Columbus	other	2012-01-01	2012-01	2012-Q1	2012.0	20000.0
+Throughout this guided project, we'll practice working with different memory constraints. In this step, let's assume we only have 10 megabytes of available memory. While crunchbase-investments.csv consumes 10.3 megabytes of disk space, we know from earlier missions that pandas often requires 4 to 6 times amount of space in memory as the file does on disk (especially when there's many string columns).
