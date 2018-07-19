@@ -27,3 +27,5 @@ Predict Car Prices: Machine Learning basic with Single and Multivariate K-neares
 Predict Home Sale Price: Predict sale price with Linear Regression and Cross Validation
 
 Storing Storm Data: working with Postgresql, including create/manage table and user group
+
+Analyzing Wikipedia Pages: working with large dataset using multi-thread and/or process
